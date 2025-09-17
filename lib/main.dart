@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:tawhib_project/screens/welcome_screen.dart';
 
 void main() {
   runApp(Tawhib());
@@ -11,14 +12,14 @@ class Tawhib extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: Scaffold(
-        body: Center(
-          child: Text(
-            "مرحبا بكم في تطبيق توهيب عبدالرب",
-            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-          ),
-        ),
-      ),
+       home: WelcomeScreen(),
+      //   body: Center(
+      //     child: Text(
+      //       "مرحبا بكم في تطبيق توهيب عبدالرب",
+      //       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      //     ),
+      //   ),
+      // ),
     );
   }
 }
