@@ -1,3 +1,5 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 
 class WelcomeScreen extends StatefulWidget {
@@ -8,6 +10,14 @@ class WelcomeScreen extends StatefulWidget {
 }
 
 class _WelcomeScreenState extends State<WelcomeScreen> {
+  @override
+  void initState(){
+    super.initState();
+    Timer(Duration(seconds: 3),(){
+      Navigator.pushReplacementNamed(context, '/home');
+
+    });
+  }
   @override
   Widget build(BuildContext context) {
     return Scaffold(
