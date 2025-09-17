@@ -12,14 +12,12 @@ class Tawhib extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-       home: WelcomeScreen(),
-      //   body: Center(
-      //     child: Text(
-      //       "مرحبا بكم في تطبيق توهيب عبدالرب",
-      //       style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-      //     ),
-      //   ),
-      // ),
+       title: 'Tawhib App',
+      theme: ThemeData(primarySwatch: Colors.blue),
+      initialRoute: '/',
+      routes: {
+        '/':(context)=>WelcomeScreen(),
+      },
     );
   }
 }
