@@ -19,6 +19,24 @@ class _WelcomeScreenState extends State<WelcomeScreen> {
             end: Alignment.bottomRight,
           ),
         ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.security_sharp, size: 100, color: Colors.white),
+              SizedBox(height: 20),
+              Text(
+                "Welcome to Tawhib Abdulrab's App",
+                style: TextStyle(
+                  fontWeight: FontWeight.bold,
+                  fontSize: 22,
+                  color: Colors.white,
+                ),
+                textAlign: TextAlign.center,
+              ),
+            ],
+          ),
+        ),
       ),
     );
   }
