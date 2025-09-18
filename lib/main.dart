@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:tawhib_project/screens/welcome_screen.dart';
+import 'package:tawhib_project/screens/home_screen.dart';
 
 void main() {
   runApp(Tawhib());
@@ -17,6 +18,7 @@ class Tawhib extends StatelessWidget {
       initialRoute: '/',
       routes: {
         '/':(context)=>WelcomeScreen(),
+        '/home': (context) => HomeScreen(),
       },
     );
   }
