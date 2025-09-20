@@ -23,6 +23,18 @@ class NetworkDetailsScreen extends StatelessWidget {
             end: Alignment.bottomRight,
           ),
         ),
+        child: Center(
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              Icon(Icons.wifi,color: Colors.white,size: 80,),
+              SizedBox(height: 20,),
+              Text("SSID: $ssid", style: TextStyle(fontSize: 18, color: Colors.white)),
+              Text("قوة الإشارة: $strength", style: TextStyle(fontSize: 18, color: Colors.white)),
+              Text("نوع التشفير: $type", style: TextStyle(fontSize: 18, color: Colors.white)),
+            ],
+          ),
+        ),
       ),
     );
   }
