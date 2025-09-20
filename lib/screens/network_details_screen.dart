@@ -1,17 +1,24 @@
 import 'package:flutter/material.dart';
 
-class NetworkDetailsScreen extends StatelessWidget {
+class NetworkDetailsScreen extends StatefulWidget {
   final String ssid;
   final String strength;
   final String type;
 
-  NetworkDetailsScreen({
+  NetworkDetailsScreen({super.key,
     required this.ssid,
     required this.strength,
     required this.type,
 
   });
+
+  @override
+  State<NetworkDetailsScreen> createState() => _NetworkDetailsScreenState();
+}
+
+class _NetworkDetailsScreenState extends State<NetworkDetailsScreen> {
   final TextEditingController passwordController = TextEditingController();
+
   final TextEditingController urlController = TextEditingController();
 
   @override
@@ -34,16 +41,16 @@ class NetworkDetailsScreen extends StatelessWidget {
               Icon(Icons.wifi, color: Colors.white, size: 80),
               SizedBox(height: 20),
               Text(
-                "SSID: $ssid",
+                "SSID: ${widget.ssid}",
                 style: TextStyle(fontSize: 18, color: Colors.white),
 
               ),
               Text(
-                "قوة الإشارة: $strength",
+                "قوة الإشارة: ${widget.strength}",
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
               Text(
-                "نوع التشفير: $type",
+                "نوع التشفير: ${widget.type}",
                 style: TextStyle(fontSize: 18, color: Colors.white),
               ),
               SizedBox(height: 10,),
