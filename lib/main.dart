@@ -1,4 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:tawhib_project/screens/about_screen.dart';
+import 'package:tawhib_project/screens/network_details_screen.dart';
+import 'package:tawhib_project/screens/password_checker_screen.dart';
+import 'package:tawhib_project/screens/url_checker_screen.dart';
 import 'package:tawhib_project/screens/welcome_screen.dart';
 import 'package:tawhib_project/screens/home_screen.dart';
 
@@ -19,6 +23,10 @@ class Tawhib extends StatelessWidget {
       routes: {
         '/':(context)=>WelcomeScreen(),
         '/home': (context) => HomeScreen(),
+        '/network': (context) => NetworkDetailsScreen(ssid: "23_AlHamza_Net", strength: "4/5", type: "WPA2"),
+        '/password': (context) => PasswordCheckerScreen(),
+        '/url': (context) => UrlCheckerScreen(),
+        '/about': (context) => AboutScreen(),
       },
     );
   }
