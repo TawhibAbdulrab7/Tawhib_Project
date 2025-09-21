@@ -1,16 +1,26 @@
-# tawhib_project
+# Tawhib Project 🚀
 
-A new Flutter project.
+A Flutter application developed by **Tawhib Abdulrab**.  
+This app provides multiple tools related to **network and security checks**, including:
 
-## Getting Started
+## 📱 Features
+- 🔐 **Password Strength Checker** → Evaluate the strength of user-entered passwords (Low, Medium, High).
+- 🌐 **URL Safety Checker** → Verify whether a URL is safe, suspicious, or invalid.
+- 📡 **Network List & Details** → View available Wi-Fi networks and check their details (SSID, Signal Strength, Encryption Type).
+- 👋 **Welcome Screen** → Splash screen with auto-navigation to the home screen.
+- ℹ️ **About Screen** → Information about the developer and app.
 
-This project is a starting point for a Flutter application.
+## 🖼️ App Screens
+- **Welcome Screen**
+- **Home Screen (Networks List)**
+- **Network Details Screen**
+- **Password Checker Screen**
+- **URL Checker Screen**
+- **About Screen**
 
-A few resources to get you started if this is your first Flutter project:
+## 🛠️ Technologies Used
+- **Flutter** (Dart)
+- **Material Design** for UI
+- **Navigator & Routes** for screen navigation
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## 📂 Project Structure
