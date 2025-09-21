@@ -10,17 +10,31 @@ class UrlCheckerScreen extends StatefulWidget {
 class _UrlCheckerScreenState extends State<UrlCheckerScreen> {
   final TextEditingController urlController = TextEditingController();
   String result = "";
+  Color resultColor = Colors.black;
   void checkUrl(String url) {
-    if (url.contains("http") && url.contains(".")) {
-      setState(() => result = "الرابط آمن");
-    } else if (url.contains("https") && url.contains(".")) {
-      setState(() => result = "الرابط آمن");
-    }else if (url.contains("@gmail.com") && url.contains(".")) {
-      setState(() => result = "الرابط آمن");
-    }else if (url.contains("phish") && url.contains(".")) {
-      setState(() => result = "الرابط مشبوه");
+    String lowerUrl = url.toLowerCase();
+
+    if ((lowerUrl.startsWith("http") || lowerUrl.startsWith("https")) &&
+        lowerUrl.contains(".")) {
+      setState(() {
+        result = "الرابط آمن ✅";
+        resultColor = Colors.green;
+      });}
+    else if (lowerUrl.contains("phish")) {
+      setState(() {
+        result = "الرابط مشبوه ⚠️";
+        resultColor = Colors.orange;
+      });
+    }else if (lowerUrl.contains("@gmail.com")) {
+      setState(() {
+        result = "الرابط آمن (بريد) 📧";
+        resultColor = Colors.green;
+      });
     }else {
-      setState(() => result = "الرابط غير صالح ");
+      setState(() {
+        result = "الرابط غير صالح ❌";
+        resultColor = Colors.red;
+      });
     }
   }
 
