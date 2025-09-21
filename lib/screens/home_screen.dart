@@ -3,6 +3,7 @@ import 'package:tawhib_project/screens/network_details_screen.dart';
 
 class HomeScreen extends StatelessWidget {
   HomeScreen({super.key});
+
   final List<Map<String, String>> networks = [
     {'ssid': "23_AlHamza_Net", 'strength': '4/5', 'type': 'WPA2'},
     {'ssid': '20_AlHamza_Net', 'strength': '4/5', 'type': 'WPA2'},
@@ -22,6 +23,60 @@ class HomeScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text("قائمة الشبكات")),
+      drawer: Drawer(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
+            DrawerHeader(
+              decoration: BoxDecoration(
+                gradient: LinearGradient(
+                  colors: [Colors.blue, Colors.purple],
+                  begin: Alignment.topLeft,
+                  end: Alignment.bottomRight,
+                ),
+              ),
+              child: Center(
+                child: Text(
+                  "Tawhib App",
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: 24,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+            ListTile(
+              leading: Icon(Icons.home),
+              title: Text("Home"),
+              onTap: () {
+                Navigator.pushNamed(context, '/home');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.password),
+              title: Text("Password Checker"),
+              onTap: () {
+                Navigator.pushNamed(context, '/password');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.link),
+              title: Text("URL Checker"),
+              onTap: () {
+                Navigator.pushNamed(context, '/url');
+              },
+            ),
+            ListTile(
+              leading: Icon(Icons.info_outline),
+              title: Text("About App"),
+              onTap: () {
+                Navigator.pushNamed(context, '/about');
+              },
+            ),
+          ],
+        ),
+      ),
       body: Container(
         decoration: BoxDecoration(
           gradient: LinearGradient(
@@ -32,28 +87,31 @@ class HomeScreen extends StatelessWidget {
         ),
         child: ListView.builder(
           itemCount: networks.length,
-            itemBuilder: (context, index) {
+          itemBuilder: (context, index) {
             final net = networks[index];
             return Card(
               margin: EdgeInsets.all(10),
               child: ListTile(
-                onTap: (){
+                onTap: () {
                   Navigator.push(
-                      context,
-                      MaterialPageRoute(
+                    context,
+                    MaterialPageRoute(
                       builder: (context) => NetworkDetailsScreen(
-                      ssid: net['ssid']!,
-                      strength: net['strength']!,
-                      type: net['type']!,
-                  ),),);
+                        ssid: net['ssid']!,
+                        strength: net['strength']!,
+                        type: net['type']!,
+                      ),
+                    ),
+                  );
                 },
-                leading: Icon(Icons.wifi,color: Colors.blue,),
+                leading: Icon(Icons.wifi, color: Colors.blue),
                 title: Text(net['ssid']!),
-                subtitle: Text('قوة الإشارة: ${net['strength']} - نوع: ${net['type']}'),
+                subtitle: Text(
+                    'قوة الإشارة: ${net['strength']} - نوع: ${net['type']}'),
               ),
             );
-
-            }),
+          },
+        ),
       ),
     );
   }
